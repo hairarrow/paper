@@ -1,0 +1,48 @@
+// CSS Hint
+/* === OUTPUT OF STYLES.SASS || DON'T EDIT `.CSS` FILES === */
+
+// helpers &
+@function rem($size)
+  @if unitless($size)
+    $size: $size * 1px
+  @return ($size / 16) * 1rem
+
+@function black($a)
+  @return rgba(#000, $a)
+
+@mixin ellipsis($w: 100%)
+  width: $w
+  white-space: nowrap
+  overflow: ellipsis
+
+@mixin bp($size, $up: false)
+  @if $up
+    @media only screen and (min-width: $size)
+      @content
+  @else
+    @media only screen and (max-width: $size)
+      @content
+
+@mixin el($el)
+  &__#{$el}
+    @content
+
+@mixin mod($mod)
+  &--#{$mod}
+    @content
+
+// reset
+html
+  box-sizing: border-box
+*, *:before, *:after
+  box-sizing: inherit
+  margin: 0
+  padding: 0
+  -webkit-text-size-adjust: 100%
+
+body
+  margin: 0
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+  font-size: 16px
+
+// app
