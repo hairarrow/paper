@@ -5,7 +5,7 @@ function end () {
   SASS_PID=$(ps aux | grep '[s]ass' | awk '{print $2}')
   POST_PID=$(ps aux | grep '[p]ostcss' | awk '{print $2}')
 
-  echo "Clearing CSS Cache and closing ending processes"
+  echo "Clearing CSS Cache and ending processes"
 
   rm -rf hot.css
 
