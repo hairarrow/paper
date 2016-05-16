@@ -55,7 +55,7 @@ if [ "$1" == "kill" ]; then {
   "
 
   touch hot.css
-  sass --sourcemap=none --no-cache --quiet --watch styles.sass:hot.css &
+  scss --sourcemap=none --no-cache --quiet --watch styles.scss:hot.css &
   postcss --use autoprefixer --output styles.css hot.css --watch &
   browser-sync start --server --logLevel=silent --no-notify --files "*.html, *.js, *.css" &
   sleep 1
